@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/jordan.css">
+    <title>Mon Blog</title>
+</head>
+<body>
+    <header>
+        <h3>
+            Mon blog
+        </h3>
+        <p>
+            ombilingomwaka3@gmail.com
+        </p>
+    </header>
+
+    <section class="section1">
+        <div class="bck_img reveal-1"></div>
+        <div class="section_image reveal-1">
+            <img src="img/jordan.jpg" alt="">
+        </div>
+        <div class="section_info reveal-2">
+            <h2>
+                Jordan Mwaka
+            </h2>
+            <p>
+                Né le 25 mai à Kinshasa en Répubique Démocratique du Congo, je suis passionné d'informatique et des nouvelles technologies. Issu d'une grande famille, cela ne m'a pas empêché de poursuivre mes rêves en integrant l'Université de Kinshasa pour y suivre des etudes en informatique. Je suis étudiant dans la faculté des sciences en L2 LMD mension informatique. Hormis l'informatique,  la musique est l'un de mes passes-temps favoris !
+            </p>
+        </div>
+        </section>
+
+        <section class="section2">
+            <div class="section_info reveal-2">
+                <h2>
+                    Compétences
+                </h2>
+                <p>
+                    Passionné des nouvelles technologies de l'information et de communication, je suivis plusieurs formations et entrepris quelques projet personnels. Je suis à la tête d'une agence e création de site et d'applicatione web et maîtrise des langages telles que python, java, javaScript, php, html5, css
+                </p>
+            </div>
+            <div class="bck2_img reveal-1"></div>
+            <div class="section_image img reveal-2">
+                <img src="https://cdn.pixabay.com/photo/2016/12/28/09/36/web-1935737__340.png" alt="">
+            </div>
+        </section>
+
+        <footer class="reveal-2">
+            <nav>
+                <ul>
+                    <li>ombilingojordan3@gmail.com</li>
+                    <li><a href="https://web.facebook.com/FTM-Network-126353239889525">FTM Network</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+        <script>
+            const ratio = .1;
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: ratio
+            };
+    
+            const handleIntersect = function (entries, observer){
+                entries.forEach(function (entry) {
+                    if (entry.intersectionRatio > ratio) {
+                        entry.target.classList.add('reveal_visible')
+                        observer.unobserve(entry.target)
+                    };
+                });
+            };
+    
+            let observer = new IntersectionObserver(handleIntersect, options);
+            document.querySelectorAll('[class*="reveal-"]').forEach(function (r) {
+                observer.observe(r);
+            });
+        </script>
+</body>
+</html>
